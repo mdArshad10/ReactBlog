@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initalValue = {
+const initialState = {
   status: false,
   userData: null,
 };
 
-export const authSlice = createSlice({
+export const counterSlice = createSlice({
   name: "auth",
-  initalValue,
+  initialState,
   reducers: {
     login: (state, action) => {
       state.status = true;
@@ -20,6 +20,7 @@ export const authSlice = createSlice({
   },
 });
 
-export const { login, logout } = authSlice.actions;
+// Action creators are generated for each case reducer function
+export const { login, logout } = counterSlice.actions;
 
-export default authSlice.reducer;
+export default counterSlice.reducer;

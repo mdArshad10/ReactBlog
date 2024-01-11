@@ -3,7 +3,7 @@ import "./App.css";
 import { useDispatch } from "react-redux";
 import authService from "./appwrite/auth.services";
 import { login, logout } from "./store/features/authSlice";
-import { Footer, Header } from "./components";
+import {  Header } from "./components";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         else dispatch(logout());
       })
       .finally(() => setLoading(false));
-  }, []);
+  });
 
   return !loading ? (
     <>
@@ -28,7 +28,7 @@ function App() {
           <main>
             Todo: <Outlet />
           </main>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </div>
     </>
